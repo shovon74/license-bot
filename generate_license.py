@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 # ─────────────────────────────────────────────
 # Must match the secret key in decoded_source.py
 # ─────────────────────────────────────────────
-SECRET_KEY = "8f7d9a2c4b6e1a5f9p3q7m2w4n8k5j1h6c3d2v5b8n4m7x9z1l0k3j6h5g4f2d1s"
+SECRET_KEY = "mhvt81anyuazoq7m2yznn5nrpb3r25glbz9trsq7lur4g5omobmup3ucsgec4fqz"
 
 
 def generate_hardware_id():
