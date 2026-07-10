@@ -1,6 +1,6 @@
-# RedditReal Bot License Generator & Bot
+# License Key Generator & Verification Service
 
-This project contains two ways to generate license keys: a **Local CLI License Key Generator** (which runs offline without any configuration) and a **Telegram License Bot** (which automates generation via Telegram chat).
+This project contains two ways to generate license keys: a **Local CLI License Key Generator** (which runs offline without any configuration) and a **Telegram Integration** (which automates generation via Telegram chat).
 
 ---
 
@@ -26,18 +26,18 @@ The script will display the license key and automatically save it to `license.ke
 
 ---
 
-## 2. Telegram License Bot (Requires `.env` Configuration)
+## 2. Telegram Integration (Requires `.env` Configuration)
 
-The Telegram bot allows users to generate license keys via chat commands (e.g., `/gen <HWID> <DAYS>`). This requires a `.env` configuration file to connect to Telegram.
+The Telegram integration allows users to generate license keys via chat commands (e.g., `/gen <HWID> <DAYS>`). This requires a `.env` configuration file to connect to Telegram.
 
 ### Step 1: Create a `.env` File
 Create a file named `.env` in the root directory of the project:
 
 ```env
-# Telegram Bot Token from @BotFather
+# Telegram Token from @BotFather
 BOT_TOKEN=1234567890:ABCdefGhIJKlmNoPQRsTUVwxyZ
 
-# Your Telegram User ID from @userinfobot (only this user can use the bot)
+# Your Telegram User ID from @userinfobot (only this user can use the service)
 ADMIN_USER_ID=987654321
 ```
 
@@ -47,17 +47,17 @@ Install the required Python packages:
 pip install -r requirements.txt
 ```
 
-### Step 3: Run the Bot
-Start the bot on your local machine or server:
+### Step 3: Run the Service
+Start the Telegram service on your local machine or server:
 ```bash
 python telegram_license_bot.py
 ```
-Once running, you can message the bot on Telegram and use the `/gen` command.
+Once running, you can message the account on Telegram and use the `/gen` command.
 
 ---
 
 ## 3. Running/Updating on AWS EC2
-If you are running the Telegram bot on an AWS EC2 instance:
+If you are running the Telegram service on an AWS EC2 instance:
 1. Connect to your instance (e.g., via EC2 Instance Connect).
 2. Pull the latest code from GitHub:
    ```bash
@@ -65,4 +65,4 @@ If you are running the Telegram bot on an AWS EC2 instance:
    git pull origin main
    ```
 3. Ensure your `.env` file is present on the server (it is ignored by git, so you must create it manually on AWS using `nano .env` if it's not there).
-4. Run or restart the bot process on the server.
+4. Run or restart the service process on the server.

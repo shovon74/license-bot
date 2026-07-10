@@ -3,9 +3,9 @@ import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 """
-RedditReal Bot License Key Generator
+License Key Generator
 ================================
-This script generates a valid license key for the RedditReal Bot_V5 project.
+This script generates a valid license key for the project.
 Run this script to get your machine's HWID and generate a working license.
 """
 
@@ -93,7 +93,7 @@ def verify_license(license_key: str, hardware_id: str):
 # ─────────────────────────────────────────────
 if __name__ == "__main__":
     print("=" * 60)
-    print("   RedditReal -- License Key Generator")
+    print("   License Key Generator")
     print("=" * 60)
 
     local_hwid = generate_hardware_id()
@@ -131,8 +131,8 @@ if __name__ == "__main__":
         print(f"[FAIL]  Verification Failed: {msg}")
 
     # Save to license.key in the same directory as the script
-    bot_dir      = os.path.dirname(os.path.abspath(__file__))
-    license_path = os.path.join(bot_dir, "license.key")
+    script_dir   = os.path.dirname(os.path.abspath(__file__))
+    license_path = os.path.join(script_dir, "license.key")
     try:
         with open(license_path, "w") as f:
             f.write(license_key)

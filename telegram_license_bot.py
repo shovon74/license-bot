@@ -25,7 +25,7 @@ async def check_auth(update: Update) -> bool:
     """Checks if the user sending the message is the admin."""
     user_id = update.effective_user.id
     if user_id != ADMIN_USER_ID:
-        await update.message.reply_text("Unauthorized. You do not have permission to use this bot.")
+        await update.message.reply_text("Unauthorized. You do not have permission to use this service.")
         return False
     return True
 
@@ -33,7 +33,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if not await check_auth(update):
         return
     await update.message.reply_text(
-        "Welcome to the License Generator Bot!\n\n"
+        "Welcome to the License Generator Service!\n\n"
         "Usage: /gen <HWID> <DAYS>\n"
         "Example: /gen ABCDEF12 30"
     )
@@ -79,5 +79,5 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("gen", gen_license))
 
-    print("Bot is running...")
+    print("Service is running...")
     app.run_polling()
